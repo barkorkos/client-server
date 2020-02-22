@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Log in</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+         <!-- Bootstrap CSS -->
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" media="all" href="MyCss.css" />
+
+    </head>
+    <body>
+            <!-- Button trigger modal -->
+
+            
+            <!-- Modal -->
+        
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Forgot Password</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        Enter your email .<br>
+                        The password will be sent to your email.<br><br>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input type="email" name="email"  onfocus="clearfiledforgetpass()" class="form-control" id="emailforget" placeholder="Enter email">
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <div id="errorMessage2" class="text-primary" style="float:left"></div>
+                    <button type="button" onclick="forget()"  class="btn btn-primary">Send Password</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+<br>
+<br>
+        <div class="container">
+                <div class="row">
+                    <div class="col-4"></div>
+                    <center>
+                        <div class="card ourForm" style="width: 35rem;">
+                            <div class="card-body">
+                              <center><h2 class="card-title" style="color: white;">Login</h2></center><br>
+                                  
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                        <input type="text" onfocus="clearfiledLogin()" name="email"  class="form-control" id="emailLogin" placeholder="Enter email">
+                                    </div>
+                                    <label id="validemail" class="valid_lable"></label>
+                                    <div><br><br></div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                        <input id='passwordLogin' type="password" name="password" id="passwordLogin"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Password">
+                                    </div>
+                                    <label id="validpassword" class="valid_lable"></label>
+                                    <div><br>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12 text-center">
+                                        <a href="#" data-toggle="modal" onclick="clearfiledforgetpass()" data-target="#exampleModal">Forgot password? </a></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 text-center ">
+                                        <button type="submit" onclick="Login()" class=" btn btn-block btn-primary tx-tfm">Login</button><br>
+                                    </div>
+                                    
+
+                                    <div class="form-group">
+                                        <p class="text-center">Don't have account? <a href="/signUp" id="signup">Sign up here</a></p>
+                                    </div>
+
+                                    <div id="errorMessage" class="server-error-response"></div>
+                                    <br>
+                                    
+
+                            </div>
+                          </div>
+
+
+                        </center>
+
+               </div>
+            </div>          
+        </div>  
+
+        
+        <!-- Footer -->
+        <div class="outFooter" style="font-size: 16px;"><center><br>© Bar & Noam<br><br> </center></div>
+
+     
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="MyJs.js"></script> 
+    </body>
+</html>

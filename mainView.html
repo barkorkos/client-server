@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Log in</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+         <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+      
+
+        <link rel="stylesheet" type="text/css" media="all" href="MyCss.css" />
+        <style>
+            /* Set the size of the div element that contains the map */
+           #map {
+             height: 400px;  /* The height is 400 pixels */
+             width: 100%;  /* The width is the width of the web page */
+            }
+         </style>
+
+    </head>
+    <body >
+        <!-- Navigation bar -->
+        <nav class="navbar navbar-expand-sm myNev">
+            <div class="container">
+                    <ul class="navbar-nav">
+                        <li class="nav-item ">
+                        <a class="nav-link" href="/contactUs/" style="color: rgb(158, 158, 158);">
+                            Contact Us
+                        </a>
+                        </li>
+                        <li class="nav-item active">
+                        <a class="nav-link" href="/mainView/" style="color: white;">
+                            <b>Main Table</b></a>
+                        </li>
+                      </ul>
+                      <ul class="nav navbar-nav navbar-right">
+                        <li class="nav-item dropdown">
+                          
+                        <a class="nav-link dropdown-toggle" id="user_name" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false" style="color: rgb(158, 158, 158);">
+                            Profile </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="user_name">
+                            <a class="dropdown-item" onclick="logOut()">Log out</a>
+                        </div>
+                        </li>
+                    </ul>
+            </div>
+        </nav>
+        <!-- end of Navigation bar -->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-sm-12">
+                    <div class="card ourForm mb-5" style="width: 35rem;">
+                        <div class="card-body">
+                            <table id="example" class="table table-striped table-bordered" style="width:100%; background-color: white;">
+                                    <thead>
+                                        <tr align="center">
+                                            <th align="center">Data1</th>
+                                            <th align="center">Data2</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    
+                                    </tbody>
+                            </table>
+                          
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-xl-6 col-sm-12">
+                    <div class="card ourForm mb-5 pt-5" style="width: 35rem;">
+                        <div class="card-body">
+                           
+                            <div id="map" class="black-text"></div>
+                    
+                        </div>
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+
+        <br><br>
+        <br><br>
+
+        <!-- Footer -->
+        <div class="outFooter" style="font-size: 16px;"><center><br>© Bar & Noam<br><br> </center></div>
+
+     
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+
+        <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzNWjSdV5kTfGUZt-JU3HKI4liwN_u7nE&callback=initMap">
+        </script>
+        <script src="MyJs.js"></script> 
+
+        <script>
+        $(document).ready(function() {
+            var user = JSON.parse(sessionStorage.getItem("user"));
+            if (user){
+                console.log(user.email)
+                $("#user_name").text( user.email);
+            }
+            update_table();
+            } );
+        </script>
+    </body>
+
+
+</html>

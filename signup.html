@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Sign Up</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+         <!-- Bootstrap CSS -->
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" media="all" href="MyCss.css" />
+
+    </head>
+    <body>
+        <div class="container">
+            <center>
+                <br><br>
+                <div class="card ourForm mb-5 pt-5" style="width: 35rem;">
+                    <div class="card-body">
+                        <center><h2 class="card-title" style="color: white;">Sign Up</h2></center><br>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input type="text" name="email" onfocus="clearfiledSignup()" class="form-control" id="emailSignUp" placeholder="Enter email">
+                        </div>
+                        <label id="validemail" class="valid_lable"></label>
+                        <br>
+                        <br>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input type="password" name="password" onfocus="clearfiledSignup()" id="passwordSignUp"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Password">
+                        </div>
+                        <label id="validpassword1" class="valid_lable"></label>
+                        <br>
+                        <br>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input type="password" name="password" onfocus="clearfiledSignup()" id="confirmation"  class="form-control" aria-describedby="emailHelp" placeholder="Password Confirmation">
+                        </div>
+                        <label id="validpassword2" class="valid_lable"></label>
+                        <br><br>
+                        <div class="col-md-12 text-center ">
+                            <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm" onclick="SignUp()">Create my account</button>
+                        </div>
+                        <br><br>
+                        <div class="form-group">
+                            <p class="text-center">Already have an account? <a href="/login/" id="signup">Sign in</a></p>
+                        </div>
+
+                        <div id="errorMessage" class="server-error-response"></div>
+                        <br>
+                    </div>
+                </div>
+            </center>                            
+
+        </div>
+     
+        <!-- Footer -->
+        <div class="outFooter" style="font-size: 16px;"><center><br>© Bar & Noam<br><br> </center></div>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="MyJs.js"></script> 
+    </body>
+</html>
