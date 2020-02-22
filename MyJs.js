@@ -177,33 +177,33 @@ function SignUp()
 
 }
 
-function validateContuct(){
-    email = document.getElementById("emailContuct");
-    name = document.getElementById("nameContuct");
-    subject = document.getElementById("subject");
-    themessage = document.getElementById("theMessage");
-    if (email.value == "" || name.value  == ""  || themessage.value  == "")
-    {   
-        if(email ==""){
-            email.style.borderColor = "red";
-            email.style.borderWidth = "2px";
-            document.getElementById("validemail").innerHTML= "<small> Invalid Email </small>";
-        }
-        if(name == ""){
-            name.style.borderColor = "red";
-            name.style.borderWidth = "2px";
-            document.getElementById("validname").innerHTML= "<small> Please enter your name </small>";
-        }
-        if(themessage == ""){
-            themessage.style.borderColor = "red";
-            themessage.style.borderWidth = "2px";
-            document.getElementById("validtext").innerHTML= "<small> Please enter a message </small>";
-        }
+// function validateContuct(){
+//     email = document.getElementById("emailContuct");
+//     name = document.getElementById("nameContuct");
+//     subject = document.getElementById("subject");
+//     themessage = document.getElementById("theMessage");
+//     if (email.value == "" || name.value  == ""  || themessage.value  == "")
+//     {   
+//         if(email ==""){
+//             email.style.borderColor = "red";
+//             email.style.borderWidth = "2px";
+//             document.getElementById("validemail").innerHTML= "<small> Invalid Email </small>";
+//         }
+//         if(name == ""){
+//             name.style.borderColor = "red";
+//             name.style.borderWidth = "2px";
+//             document.getElementById("validname").innerHTML= "<small> Please enter your name </small>";
+//         }
+//         if(themessage == ""){
+//             themessage.style.borderColor = "red";
+//             themessage.style.borderWidth = "2px";
+//             document.getElementById("validtext").innerHTML= "<small> Please enter a message </small>";
+//         }
 
-    }
+//     }
 
-    validateEmail(email);
-}
+//     validateEmail(email);
+// }
 
 
 // function validateEmail(email)
@@ -367,10 +367,10 @@ function sendContuctUsMail()
 {
 
     email = document.getElementById("emailContuct");
-    name = document.getElementById("nameContuct");
+    name2 = document.getElementById("name_contact");
     subject = document.getElementById("subject");
     themessage = document.getElementById("theMessage");
-    if (email.value === "" || name.value  === ""  || themessage.value  === "")
+    if (email.value === "" || name2.value  === ""  || themessage.value  === "")
     {   
         if(email.value ==""){
             email.style.borderColor = "red";
@@ -378,9 +378,9 @@ function sendContuctUsMail()
             document.getElementById("validemail").innerHTML= "<small> Invalid Email </small>";
         }
         console.log("%"+name.value+"%")
-        if(name.value == ""){
-            name.style.borderColor = "red";
-            name.style.borderWidth = "2px";
+        if(name2.value == ""){
+            name2.style.borderColor = "red";
+            name2.style.borderWidth = "2px";
             document.getElementById("validname").innerHTML= "<small> Please enter your name </small>";
         }
         if(themessage.value == ""){
@@ -400,7 +400,7 @@ function sendContuctUsMail()
 
     subjectfromList= document.getElementById("subject")
     var contuctDetails={
-        name: document.getElementById("nameContuct").value,
+        name: document.getElementById("name_contact").value,
         email: document.getElementById("emailContuct").value,
         subject: subjectfromList.options[subjectfromList.selectedIndex].text,
         message: document.getElementById("theMessage").value
