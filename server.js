@@ -110,7 +110,8 @@ app.get('/login', function(req,res){
 
 app.post('/login',function(req,res){
   console.log(req.body);
-  var userName= req.body.userName;
+  var userName= req.body.userName.toLowerCase();
+  console.log(userName);
   var password= req.body.password;
   var query = "SELECT * FROM users WHERE email='"+userName+"'";
   console.log(query);
@@ -149,7 +150,7 @@ app.get('/signUp', function(req,res){
 
 app.post('/signUp',function(req,res){
   console.log(req.body);
-  var userName= req.body.email
+  var userName= req.body.email.toLowerCase();
 
   var password= req.body.password;
   
