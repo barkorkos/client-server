@@ -169,6 +169,32 @@ app.post('/signUp',function(req,res){
     client.query("INSERT INTO users(email, password) VALUES ('"+userName+"', '"+encrype_password+"');").then(()=> {
       //new user add successfuly
       console.log("new user added successfuly");
+      var transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: 'testForBraude@gmail.com',
+          pass: 'Aa123456!'
+        }
+      });
+
+      var mailOptions = {
+        from: 'testForBraude@gmail.com',
+        to: userName,
+        subject: 'Sending Email using Node.js',
+        text: 'Congratulations you are a new member in our site !' 
+      };
+
+      transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+
+                  res.writeHead(404);
+      res.end();
+          console.log(error);
+        } else {
+
+          console.log('Email sent: ' + info.response);
+        }
+      });
       res.writeHead(200);
       res.end();
       return;
@@ -191,7 +217,9 @@ app.get('/mainView', function(req,res){
 
 
 app.post('/forgetPassword' , function(req,res){
-  var userName = req.body.email;
+  var userName = req.body.email
+  userName =userName.toLowerCase();
+  console.log(userName);
   var query = "SELECT * FROM users WHERE email='"+userName+"'";
   client.query(query).then(results => {
       var resultsFound = results.rowCount;
